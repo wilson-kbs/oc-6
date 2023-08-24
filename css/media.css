@@ -1,0 +1,47 @@
+
+
+.media {
+    margin-bottom: 20px;
+}
+
+.media__preview {
+    object-fit: cover;
+    width: 350px;
+    height: 300px;
+    max-height: 100%;
+    border-radius: 5px;
+}
+
+.media__info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.media__info .media__title {
+    margin: 0;
+    font-size: 20px;
+    color: #901C1C;
+}
+
+.media__likes {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.media__likes .likes-count {
+    margin-right: 3px;
+    font-size: 20px;
+    color: #901C1C;
+}
+
+.media__likes .likes-btn {
+    font-size: 20px;
+    color: #901C1C;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+

@@ -1,50 +1,193 @@
 @import url("photographer.css");
+@import url("photographer-card.css");
+@import url("photographer-header.css");
+@import url("photographer-media.css");
+@import url("lightbox.css");
+@import url("gallery-media.css");
+@import url("media.css");
+
+:root {
+    --primary-color: #901C1C;
+    --secondary-color: #D3573C;
+    --text-primary-color: #D3573C;
+}
 
 body {
     font-family: "DM Sans", sans-serif;
     margin: 0;
+
+}
+html, body {
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
 }
 
+#main {
+    margin: auto;
+    width: 100%;
+    /*max-width: 1240px;*/
+}
 
-header {
+#header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     height: 90px;
+    padding: 0 100px;
+    box-sizing: border-box;
 }
 
-h1 {
+#header h1 {
     color: #901C1C;
-    margin-right: 100px;
 }
 
-.logo {
+#header .logo {
     height: 50px;
-    margin-left: 100px;
 }
 
-.photographer_section {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 70px;
+#modals {
+    position: relative;
+}
+
+.photographers {
+    /*display: grid;*/
+    /*grid-template-columns: 1fr 1fr 1fr;*/
+    /*gap: 70px;*/
     margin-top: 100px;
 }
 
-.photographer_section article {
-    justify-self: center;
+.photographers-row {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 70px;
+    padding: 0 100px;
+    box-sizing: border-box;
 }
 
-.photographer_section article h2 {
-    color: #D3573C;
+/*.photograph-card img {*/
+/*    height: 200px;*/
+/*    width: 200px;*/
+/*}*/
+
+.visually-hidden {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+}
+
+#contact-modal__container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 100;
+    background-color: rgba(0,0,0,0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+#contact-modal__container.show {
+    display: flex;
+}
+
+.contact_button {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding: 11px;
+    width: 170px;
+    height: 70px;
+    border: none;
+    background-color: #901C1C;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact_button:hover, .contact_button:focus {
+    background-color: var(--secondary-color);
+    color: black;
+}
+
+#contact-modal {
+    border-radius: 5px;
+    background-color: #DB8876;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 35px;
+    margin: auto;
+}
+
+#contact-modal header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#contact-modal header .contact-modal__close-button {
+    width: 50px;
+    height: 50px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 42px;
+    background-image: url("/assets/icons/close-white.svg") ;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#contact-modal header h2 {
+    font-size: 64px;
+    font-weight: normal;
+    text-align: left;
+    margin: 0;
+}
+
+#contact-modal form {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#contact-modal form label {
+    color: #312E2E;
     font-size: 36px;
 }
 
-.photographer_section article img {
-    height: 200px;
-    width: 200px;
+#contact-modal form div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: self-start;
+    margin-bottom: 5px;
 }
+
+#contact-modal form input {
+    width: 100%;
+    height: 68px;
+    border: none;
+    border-radius: 7px;
+}
+
+#contact-modal form textarea {
+    width: 100%;
+    height: 200px;
+    border: none;
+    border-radius: 5px;
+    resize: none;
+}
+
+

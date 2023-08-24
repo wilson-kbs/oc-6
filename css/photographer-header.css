@@ -1,0 +1,29 @@
+.photographer-header {
+    background-color: #FAFAFA;
+    height: 313px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    margin: 0 100px;
+}
+
+.photographer-header__info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.photographer-header .info-name {
+    margin: 0;
+    font-size: 64px;
+    font-weight: normal;
+    color: #901C1C;
+}
+
+.photographer-header .info-location {
+    margin: 0;
+    font-size: 24px;
+    color: #901C1C;
+}

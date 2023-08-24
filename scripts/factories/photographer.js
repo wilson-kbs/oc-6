@@ -1,17 +1,30 @@
-function photographerFactory(data) {
-    const { name, portrait } = data;
+import * as path from "../utils/path.js";
+import {MEDIAS_PATH, PHOTOGRAPHERS_PATH} from "../constants.js";
 
-    const picture = `assets/photographers/${portrait}`;
-
-    function getUserCardDOM() {
-        const article = document.createElement( 'article' );
-        const img = document.createElement( 'img' );
-        img.setAttribute("src", picture)
-        const h2 = document.createElement( 'h2' );
-        h2.textContent = name;
-        article.appendChild(img);
-        article.appendChild(h2);
-        return (article);
-    }
-    return { name, picture, getUserCardDOM }
+/**
+ * @param {PhotographerAPI} data
+ * @return {IPhotographer}
+ */
+export function photographerFactory(data) {
+  const {portrait, ...rest} = data;
+  return {
+    ...rest,
+    picture: path.join(PHOTOGRAPHERS_PATH, portrait),
+  };
 }
+
+/**
+ * @param {MediaAPI} data
+ * @return {IMedia}
+ */
+export function mediaFactory(data) {
+  const {image, video, ...rest} = data;
+
+  return {
+    ...rest,
+    url: path.join(MEDIAS_PATH, data.photographerId, image ?? video),
+    type: image ? "IMAGE" : "VIDEO",
+  }
+}
+
+export default photographerFactory;
