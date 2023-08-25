@@ -1,5 +1,2 @@
 .idea
 .DS_store
-/assets/medias/*
-/assets/photographers/*
-!/assets/photographers/account.png
